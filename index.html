@@ -5,23 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Product Explorer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <main>
-        <h1>Product Explorer</h1>
-        <form id="searchForm">
-            <input
-                type="text" id="searchInput" placeholder="Search products...">
-            <button type="submit">
+<body class="bg-slate-50 min-h-screen flex flex-col text-slate-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-500/20">
+                    P
+                </div>
+                <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+                    Product Explorer
+                </h1>
+            </div>
+
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors duration-200 py-1 px-3 rounded-lg hover:bg-slate-100">
+                Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-grow w-full">
+
+        <!-- Header Section -->
+        <div class="mb-8 max-w-2xl">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
+                Find Products
+            </h2>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Search for products using the API.
+            </p>
+        </div>
+
+        <!-- Search Form -->
+        <form id="searchForm" class="flex flex-col sm:flex-row gap-3 mb-8 max-w-2xl">
+
+            <div class="relative flex-1">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    class="w-full bg-white border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 shadow-sm"
+                >
+            </div>
+
+            <button
+                id="searchProduct"
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2"
+            >
                 Search
             </button>
+
         </form>
-        <p id="status"></p>
-        <section id="products"></section>
+
+        <!-- Status Indicator -->
+        <p id="status" class="mb-6 text-sm font-medium text-slate-500 min-h-[1.25rem] transition-all duration-200"></p>
+
+        <!-- Products Grid -->
+        <section
+            id="products"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+        </section>
+
     </main>
-    
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-500 font-medium">
+            <p>Product Explorer - Learning Project</p>
+        </div>
+    </footer>
+
 </body>
 </html>
